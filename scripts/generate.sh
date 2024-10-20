@@ -4,7 +4,7 @@
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 
 # 固定された相対パスのディレクトリ (スクリプトディレクトリから見た相対パス)
-TARGET_DIR="$SCRIPT_DIR/../.github/workflows"
+TARGET_DIR=$(realpath "$SCRIPT_DIR/../.github/workflows")
 
 # 使用方法を表示する関数
 usage() {

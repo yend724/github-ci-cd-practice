@@ -3,9 +3,9 @@
 # スクリプトが置かれているディレクトリを取得
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 
-# ワークフローのディレクトリと無効化されたワークフローのディレクトリを設定
-WORKFLOWS_DIR="$SCRIPT_DIR/../.github/workflows"
-DISABLED_WORKFLOWS_DIR="$SCRIPT_DIR/../.github/disabled-workflows"
+# 固定された相対パスのディレクトリを絶対パスに変換
+WORKFLOWS_DIR=$(realpath "$SCRIPT_DIR/../.github/workflows")
+DISABLED_WORKFLOWS_DIR=$(realpath "$SCRIPT_DIR/../.github/disabled-workflows")
 
 # 移動先のディレクトリが存在しない場合は作成
 if [ ! -d "$DISABLED_WORKFLOWS_DIR" ]; then
