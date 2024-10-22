@@ -6,6 +6,7 @@ jobs:
     env:
       GITHUB_RUN_ID: ${{ github.run_id }}
     steps:
-      - run: echo "${GITHUB_RUN_ID}"
-      - run: echo "Hello"
-        if: ${{ contains(github.run_id, '9') }}
+      - run: echo "Hoge"
+        if: ${{ false}}
+      - run: echo "Fuga"
+        if: ${{ true}}
