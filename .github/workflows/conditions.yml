@@ -3,6 +3,9 @@ on: push
 jobs:
   skip-or-run:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_RUN_ID: ${{ github.run_id }}
     steps:
+      - run: echo "${GITHUB_RUN_ID}"
       - run: echo "Hello"
         if: ${{ contains(github.run_id, '1') }}
