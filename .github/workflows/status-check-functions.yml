@@ -1,7 +1,7 @@
 name: Status Check Functions
 on: push
 jobs:
-  fale:
+  fail:
     runs-on: ubuntu-latest
     steps:
       - run: exit 1
